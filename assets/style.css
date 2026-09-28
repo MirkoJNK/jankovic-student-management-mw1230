@@ -1,0 +1,179 @@
+:root {
+    --bg: #f5f7fb;
+    --card: #ffffff;
+    --text: #182033;
+    --muted: #667085;
+    --border: #e5e7eb;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --danger: #dc2626;
+    --danger-hover: #b91c1c;
+    --secondary: #eef2f7;
+    --secondary-hover: #e2e8f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    width: min(1120px, calc(100% - 32px));
+    margin: 48px auto;
+}
+
+.container.narrow { width: min(760px, calc(100% - 32px)); }
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+
+h1, h2, h3 { margin-top: 0; }
+h1 { margin-bottom: 8px; }
+.subtitle { margin: 0; color: var(--muted); }
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .06);
+    overflow: hidden;
+}
+
+.table-header {
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.table-header h2 { margin: 0; font-size: 18px; }
+.count { color: var(--muted); font-size: 14px; }
+.table-wrap { overflow-x: auto; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 16px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+th {
+    background: #fafbfc;
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+tbody tr:hover { background: #fbfdff; }
+.actions { display: flex; gap: 8px; align-items: center; }
+.actions form { margin: 0; }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 9px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .15s ease;
+}
+
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-secondary { background: var(--secondary); color: var(--text); }
+.btn-secondary:hover { background: var(--secondary-hover); }
+.btn-danger { background: #fee2e2; color: var(--danger); }
+.btn-danger:hover { background: #fecaca; color: var(--danger-hover); }
+.btn-small { padding: 7px 11px; font-size: 13px; }
+
+.alert {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 13px 16px;
+}
+
+.alert.success { background: #ecfdf3; color: #027a48; border: 1px solid #abefc6; }
+.alert.danger { background: #fef3f2; color: #b42318; border: 1px solid #fecdca; }
+.alert ul { margin-bottom: 0; }
+
+.form-card { padding: 28px; }
+.form-card h1 { margin-bottom: 6px; }
+.form-grid { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 9px;
+    background: #fff;
+    color: var(--text);
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #84adff;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .10);
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.empty-state { padding: 60px 24px; text-align: center; }
+.empty-state p { color: var(--muted); margin-bottom: 20px; }
+
+@media (max-width: 700px) {
+    .page-header { align-items: flex-start; flex-direction: column; }
+    .form-grid { grid-template-columns: 1fr; }
+    .container { margin-top: 24px; }
+}
